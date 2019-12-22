@@ -1,0 +1,3 @@
+Nice easy introduction to ease us into Advent of Code 2019.
+
+Just a wee bit of recursion keeps it from being completely boring.

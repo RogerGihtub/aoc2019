@@ -1,0 +1,27 @@
+Advent of Code 2019: Day 10
+
+Oh my stars and garters -- this one went very pear-shaped.
+
+My basic idea here in Part 01 is basically sound, I think.
+
+I think I was inspired mostly by chess, and the way knights move,
+with their 2-up-1-over thing, and how a knight is only 'directly behind'
+another knight if they're in a valid knight-move space.
+
+So basically I spent a bunch of time trying to reduce 'moves' 
+like "-6,3" to "-2,1" which sounds like it should be simple but it felt like
+every time it was a special case to deal with.
+
+So that reduction is pretty much what all the Simplify_Tests are for.
+
+Once that 'move' has been deduced, then it's finding all those spaces between
+two arbitrary points, which is what the IntegralPoints tests do.
+
+THEN it's just checking that set of points to see if any of them are occupied
+by asteroids; if so, line of sight is blocked.
+
+This generally works just fine; the signed-Greatest-Common-Denominator code
+is entirely horrid but could theoretically be fixed up.
+
+Then... then there was Part 02.
+

@@ -1,0 +1,12 @@
+Advent of Code 2019: Day 04
+
+Let the brutally-inefficient brute-force brutery continue!
+
+A bit of a breather, easier day.
+
+This sort of very verbose, very explicit, not clever at all really, code
+is just fine in my books and I think I wouldn't touch it very much unless
+I had to.
+
+It probably wouldn't work all that well if the passwords were a hundred
+characters long, but they're not, so I don't care.

@@ -1,0 +1,22 @@
+Advent of Code 2019: Day 03
+
+Let the brutally-inefficient brute-force brutery commence.
+
+This was the first hint that using 'real' two-dimensional arrays was
+going to be a bad idea, but I didn't listen (yet.)
+
+Instead, I just plowed along with 
+var grid = new string[20480, 20480];
+
+To be fair, using wire-specific char ("A" and "B") to distinguish
+between the two wires was marginally-clever.  It made it easier to walk
+the wires later, and also to distinguish between a wire crossing itself
+and a wire crossing the other wire.
+
+Also check out my personal very-common pattern of "Okay, they're asking for
+the minimum or maximum thing here, so we're just gonna look at all the things."
+
+ALSO you can see that I sort-of defensively try to check for error conditions,
+but then don't actually do anything with them.
+
+So, yes, could be optimized, but why.

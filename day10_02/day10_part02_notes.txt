@@ -1,0 +1,55 @@
+Advent of Code 2019: Day 10
+
+Part 02: Losing our Bearings
+
+Okay so I figured, fine, I'll basically just sweep the beam down from north, 
+which is bearing 000, down and clockwise and around, by a degree or whatever a step, and
+just destroy stuff, and it'll be fine just fine.
+
+It turned out to be kind of tricky.
+
+First of all I needed to grind out all the trigonometic bearing code, which was
+again a twisty maze of special cases all different, but it's okay.  All the gory
+details are in the Asteroid method public double TakeBearing(Point A, Point B).
+
+So we grind out all those bearings for the entire asteroid field, along with range
+while we're at it.  That all seems sort of sane.
+
+Then I need to figure out what sort of step size I'm going to use when swinging
+the beam of destruction around.  The minimum difference between bearings sounds
+like a plausible value.  I'm not sure if it actually is.  I thought of maybe just
+aiming it at sequential border tiles all the way around, but decided against it.
+
+Then it's time to DestroyAllAsteroids() which is less fun than it sounds.  We
+basically start looking down bearings for asteroids to destroy.
+
+Alright, so we've got our bearing, and our asteroids with their bearings, and
+so what's the problem with FindAsteroidsAlongBearing()?
+
+The problem is that because we're flailing around in double-precision floating-point
+land, there needs to be some actual beam width here.  And how wide should THAT be?
+Well... after some flailing around, I landed on half the aforementioned BeamWidth,
+but that's on either side, so it basically ends up being BeamWidth.  I feel like I
+might have just got lucky on that one.
+
+Alright now we've got Asteroids in our beam and it must be time to destroy them
+right hahaha no wait there is of course more.
+
+If there's another asteroid "directly" behind our closest target, we don't destroy
+that.  So do I need to check on that again with my IntegralSpaces and stuff?
+Probably, but I don't.  I just assume that if they're within BeamWidth then that's
+close enough to 'directly behind' for me, which is almost certainly false in the
+general case, but I somehow got lucky again and it worked out.
+
+So all I really do is look down a bearing for asteroids, and if I find any, then I
+destroy the closest one and move on.  And by 'moving on' I mean that we need to move
+far enough over so that the lucky asteroid(s) behind the now-destroyed asteroid don't
+get tagged again, but not so far that we miss anyone.  Somehow, that works.
+
+This is one of those cases where I think Part 01 actually became sort of harmful to
+solving Part 02.  Possibly that's just on me though.
+
+On the plus side, I've got most of a general-purpose polar co-ordinates library
+written now, so I've got that going for me.
+
+

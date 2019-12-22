@@ -1,0 +1,33 @@
+Advent of Code 2019: Day 12
+
+Part 01 is surprisingly-sane, really.
+
+The main trickery here is ensuring all the steps happen in the right order
+for everyone.  Ample use of "put this calculated thing into a pending bucket"
+and "okay now apply things out of the pending bucket" helped.
+
+Part 02... I dunno.
+
+I mean, okay, Experiment_1 shows that there's sort of a "resonance" going on,
+with moons 1 and 3 repeating every 924 turns, and that repeats 3 times to get
+us to 2772.
+
+So what do I *do* with that?
+
+well... I could pre-gen/load the states up to that point, I guess.  That
+would speed things up somewhat.  Would it speed them up enough?  Hrm.
+Maybe.
+
+I guess I'll figure out the resonances for each moon in the 'big number'
+systems, assuming I can do so in less than a week each, and maybe that
+will be enough to get me where I need to go.  Maybe.
+
+There might be some other optimizations to try to pull here, but let's see
+if this seems to be on the right path at least.
+
+4 686 774 924
+
+4686774924/100124388 doesn't resonate so hrm what why.
+
+
+

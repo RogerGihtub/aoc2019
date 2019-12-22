@@ -1,0 +1,52 @@
+Advent of Code 2019: Day 06
+
+I LIKE STRINGS.
+
+Well, more than trees, anyway, apparently.
+
+My basic approach here was to take input like:
+
+COM)B
+B)C
+C)D
+D)E
+E)F
+B)G
+G)H
+D)I
+E)J
+J)K
+K)L
+
+and turn it into:
+
+$)B
+$)B)C
+$)B)G
+$)B)C)D
+$)B)G)H
+$)B)C)D)I
+$)B)C)D)E
+$)B)C)D)E)J
+$)B)C)D)E)F
+$)B)C)D)E)J)K
+$)B)C)D)E)J)K)L
+
+(where COM has turned into $ for reasons.)
+
+This isn't terribly useful for anything *except* counting edges between nodes, but
+for that specific purpose it makes it super-easy, so that's good enough for me.
+
+On other hand, the Day06_Part01 test takes six minutes to complete, so you need to be
+a bit patient.  But you get that swell output01.txt file created, all 1 Mb of it, so
+I'll call it fair.
+
+It's also moderately useful for part 2, insofar as we're trying to walk back from two
+leaf nodes to their closest common ancestor.  I did this by taking the two expanded
+lineages, finding their longest common string (that also starts with the root $, which
+feels like it might not be strictly necessary, but why not), chopping that out, and
+then it's back to counting edges.  The "longest common string" code is totally stolen
+out of some random StackExchange answer.
+
+You might think that since Part 01 generated output01.txt, I might just load that
+instead of taking six minutes to generate it again in Part 02, but you would be wrong.

@@ -1,0 +1,16 @@
+Advent of Code 2019: Day 08
+
+Not too hard.  Some stolen StackExchange code helped though.
+
+Part 01 in particular is very straightforward.
+
+Part 02 was mostly straightforward; the main trickery was to start on the bottom
+layer and work your way up to the top.
+
+The other slightly clever bit was basically not worrying about line length at all
+during the painting; just crammed all the painted tiles together.  Since I already
+had a routine to break that into lines, I used that again.  So that was nice.
+
+Apparently some other people managed to mirror and/or invert the letters, which
+doesn't especially surprise me I guess.
+
